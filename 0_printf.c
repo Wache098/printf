@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
 /**
  * print_char - prints out a character
  * @args:list of arguments
@@ -13,8 +14,7 @@ int print_char(va_list args)
 int c;
 
 c = va_arg(args, int);
-putchar(c);
-return (1);
+return (write(1, &c, 1));
 }
 /**
  * print_string - prints a string
@@ -29,17 +29,15 @@ int count;
 
 if (str == NULL)
 {
-	printf("(null)");
+	write(1, "(null)", 6);
 	return (6);
 }
 else
 {
 
-count = 0;
-
 while (*str)
 {
-putchar(*str);
+write(1, str, 1);
 str++;
 count++;
 }
@@ -68,7 +66,6 @@ switch (**format)
 		count += print_string(args);
 		break;
 	case '%':
-		count += print_string(args);
 		putchar('%');
 		count++;
 		break;
@@ -76,6 +73,7 @@ switch (**format)
 		putchar('%');
 		putchar(**format);
 		count += 2;
+		break;
 }
 return (count);
 }
