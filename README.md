@@ -2,7 +2,7 @@ C- PRINTF function
  a standard C library function used for printing formatted output.
     takes a format string and additional arguments, and it produces output according to the format specified in the string
 
-### These are the names of the Contributors to this github repository
+### These are the names of the Contributors to this github repository 
 
 * **Wachera Wameru** [Wachera's](https://github.com/Wache098)
 * **Bernadette Massawe** [Bernadette's github](https://github.com/bernadettemm)
