@@ -10,5 +10,5 @@ int print_char(va_list args);
 int handle_format_specifier(const char **format, va_list args);
 int print_string(va_list args);
 int _putchar(char c);
-
+int print_int(va_list args);
 #endif
