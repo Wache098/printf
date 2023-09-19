@@ -111,11 +111,7 @@ count++;
 else
 {
 format++;
-if (*format == '\0')
-{
-break;
 count += handle_format_specifier(&format, args);
-}
 }
 format++;
 }
