@@ -91,9 +91,15 @@ int _printf(const char *format, ...)
 va_list args;
 int count;
 
+count = 0;
+
+if (format == NULL)
+{
+	return (-1);
+}
 va_start(args, format);
 
-count = 0;
+
 
 while (*format)
 {
@@ -105,7 +111,11 @@ count++;
 else
 {
 format++;
+if (*format == '\0')
+{
+break;
 count += handle_format_specifier(&format, args);
+}
 }
 format++;
 }
